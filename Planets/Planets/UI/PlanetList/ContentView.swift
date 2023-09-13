@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var networkMonitor: NetworkMonitor
     @StateObject private var planetViewModel = PlanetViewModel()
+    @State private var showNetworkAlert = false
     
     var body: some View {
         NavigationView {
@@ -32,14 +34,35 @@ struct ContentView: View {
             .navigationTitle("Planets")
             .navigationBarTitleDisplayMode(.automatic)
         }
+        .onChange(of: networkMonitor.isConnected) { connection in
+            showNetworkAlert = connection == false
+        }
+        .alert(
+            "Network connection seems to be offline.",
+            isPresented: $showNetworkAlert
+        ) {
+            Button("OK", role: .cancel) {
+                showNetworkAlert = false
+            }
+        }
     }
     
     private func fetchData() {
-        planetViewModel.fetchPlanets(shouldRefresh: false)
+        if (networkMonitor.isConnected) {
+            showNetworkAlert = false
+            planetViewModel.fetchPlanets(shouldRefresh: false)
+        } else {
+            showNetworkAlert = true
+        }
     }
     
     private func refreshData() {
-        planetViewModel.fetchPlanets(shouldRefresh: true)
+        if (networkMonitor.isConnected) {
+            showNetworkAlert = false
+            planetViewModel.fetchPlanets(shouldRefresh: true)
+        } else {
+            showNetworkAlert = true
+        }
     }
     
     private func onTapLoadView() {

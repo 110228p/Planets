@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct PlanetsApp: App {
+    @StateObject var networkMonitor = NetworkMonitor()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(networkMonitor)
         }
     }
 }
