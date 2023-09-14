@@ -11,14 +11,20 @@ import Combine
 class PlanetViewModel: BaseAPIViewModel<Planet> {
     @Published var shouldFetchData = true
     
+    private let planetAPIService: PlanetAPIServiceDelegate
+    
     private let pageLimit = 10
     private var nextURL = Constants.PLANET_URL
     
     private var cancellable: AnyCancellable?
     
+    init(planetAPIService: PlanetAPIServiceDelegate = PlanetAPIService.shared) {
+        self.planetAPIService = planetAPIService
+    }
+    
     func fetchPlanets(shouldRefresh: Bool) {
         self.apiState = APIState.inProgress
-        cancellable = PlanetAPIService.shared.getPlanets(nextURL: shouldRefresh ? Constants.PLANET_URL : nextURL)
+        cancellable = planetAPIService.getPlanets(nextURL: shouldRefresh ? Constants.PLANET_URL : nextURL)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
@@ -26,7 +32,7 @@ class PlanetViewModel: BaseAPIViewModel<Planet> {
                     self.apiState = APIState.failed
                     print(error)
                 case .finished:
-                    print("Finished")
+                    break
                 }
             } receiveValue: { response in
                 if (shouldRefresh) {

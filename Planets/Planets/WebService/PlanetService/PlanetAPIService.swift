@@ -2,13 +2,17 @@
 //  PlanetService.swift
 //  Planets
 //
-//  Created by M-DAQ on 2023-09-14.
+//  Created by Imesh on 2023-09-14.
 //
 
 import Foundation
 import Combine
 
-class PlanetAPIService: APIService {
+protocol PlanetAPIServiceDelegate {
+    func getPlanets(nextURL: String) -> AnyPublisher<PlanetsResponse, Error>
+}
+
+class PlanetAPIService: APIService, PlanetAPIServiceDelegate {
     static let shared = PlanetAPIService()
     
     func getPlanets(nextURL: String) -> AnyPublisher<PlanetsResponse, Error> {

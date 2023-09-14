@@ -26,6 +26,8 @@
 		64D4D78F2AB2236100A04507 /* BaseApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D78E2AB2236100A04507 /* BaseApiViewModel.swift */; };
 		64D4D7922AB22E4B00A04507 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D7912AB22E4B00A04507 /* NetworkMonitor.swift */; };
 		64E012422AB2B9F2004130F0 /* PlanetAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E012412AB2B9F2004130F0 /* PlanetAPIService.swift */; };
+		64E012442AB2ED67004130F0 /* MockPlanetAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E012432AB2ED67004130F0 /* MockPlanetAPIService.swift */; };
+		64E012462AB2F37F004130F0 /* PlanetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E012452AB2F37F004130F0 /* PlanetViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		64D4D78E2AB2236100A04507 /* BaseApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiViewModel.swift; sourceTree = "<group>"; };
 		64D4D7912AB22E4B00A04507 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		64E012412AB2B9F2004130F0 /* PlanetAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetAPIService.swift; sourceTree = "<group>"; };
+		64E012432AB2ED67004130F0 /* MockPlanetAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetAPIService.swift; sourceTree = "<group>"; };
+		64E012452AB2F37F004130F0 /* PlanetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				64D4D75A2AB1C58900A04507 /* PlanetsTests.swift */,
+				64E012432AB2ED67004130F0 /* MockPlanetAPIService.swift */,
+				64E012452AB2F37F004130F0 /* PlanetViewModelTests.swift */,
 			);
 			path = PlanetsTests;
 			sourceTree = "<group>";
@@ -386,7 +392,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E012442AB2ED67004130F0 /* MockPlanetAPIService.swift in Sources */,
 				64D4D75B2AB1C58900A04507 /* PlanetsTests.swift in Sources */,
+				64E012462AB2F37F004130F0 /* PlanetViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
