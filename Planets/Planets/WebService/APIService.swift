@@ -6,16 +6,7 @@
 //
 
 import Foundation
-import Combine
 
 class APIService {
-    static let shared = APIService()
-    private let session = URLSession.shared
-    
-    func getPlanets(nextURL: String) -> AnyPublisher<PlanetsResponse, Error> {
-        return session.dataTaskPublisher(for: URLRequest(url: URL(string: nextURL)!) )
-            .map(\.data)
-            .decode(type: PlanetsResponse.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
+    let session = URLSession.shared
 }

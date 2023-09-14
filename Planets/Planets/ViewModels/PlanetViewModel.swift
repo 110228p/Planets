@@ -18,7 +18,7 @@ class PlanetViewModel: BaseAPIViewModel<Planet> {
     
     func fetchPlanets(shouldRefresh: Bool) {
         self.apiState = APIState.inProgress
-        cancellable = APIService.shared.getPlanets(nextURL: shouldRefresh ? Constants.PLANET_URL : nextURL)
+        cancellable = PlanetAPIService.shared.getPlanets(nextURL: shouldRefresh ? Constants.PLANET_URL : nextURL)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

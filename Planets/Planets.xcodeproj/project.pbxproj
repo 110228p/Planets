@@ -25,6 +25,7 @@
 		64D4D78D2AB21B0F00A04507 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D78C2AB21B0F00A04507 /* BaseViewModel.swift */; };
 		64D4D78F2AB2236100A04507 /* BaseApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D78E2AB2236100A04507 /* BaseApiViewModel.swift */; };
 		64D4D7922AB22E4B00A04507 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D7912AB22E4B00A04507 /* NetworkMonitor.swift */; };
+		64E012422AB2B9F2004130F0 /* PlanetAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E012412AB2B9F2004130F0 /* PlanetAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		64D4D78C2AB21B0F00A04507 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		64D4D78E2AB2236100A04507 /* BaseApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiViewModel.swift; sourceTree = "<group>"; };
 		64D4D7912AB22E4B00A04507 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		64E012412AB2B9F2004130F0 /* PlanetAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		64D4D7852AB2027100A04507 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				64E012402AB2B9DA004130F0 /* PlanetService */,
 				64D4D7882AB2033500A04507 /* Models */,
 				64D4D77F2AB1C9E600A04507 /* APIService.swift */,
 			);
@@ -222,6 +225,14 @@
 				64D4D7912AB22E4B00A04507 /* NetworkMonitor.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		64E012402AB2B9DA004130F0 /* PlanetService */ = {
+			isa = PBXGroup;
+			children = (
+				64E012412AB2B9F2004130F0 /* PlanetAPIService.swift */,
+			);
+			path = PlanetService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +370,7 @@
 				64D4D74C2AB1C58700A04507 /* ContentView.swift in Sources */,
 				64D4D74A2AB1C58700A04507 /* PlanetsApp.swift in Sources */,
 				64D4D7762AB1C60400A04507 /* PlanetRow.swift in Sources */,
+				64E012422AB2B9F2004130F0 /* PlanetAPIService.swift in Sources */,
 				64D4D77C2AB1C67A00A04507 /* Planet.swift in Sources */,
 				64D4D77A2AB1C64900A04507 /* PlanetsResponse.swift in Sources */,
 				64D4D7802AB1C9E600A04507 /* APIService.swift in Sources */,
